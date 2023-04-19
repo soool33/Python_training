@@ -35,32 +35,37 @@
 
 # fonction de la conversion
 def convert(unit1: str, unit2: str, facteur: float):
-    valeur_flt = 0
-    while valeur_flt == 0:
-        valeur_str = input(f"Conversion {unit1} -> {unit2}. Donnez la valeur en {unit1} ")
-        try:
-            valeur_flt = float(valeur_str)
-        except:
-            print("ERREUR : La valeure a convertire doit etre un nombre")
-            valeur_flt = 0
-            print("")
+    valeur_str = input(f"Conversion {unit1} -> {unit2}. Donnez la valeur en {unit1} (ou 'q' pour quiter)")
+    if valeur_str == "q":
+        return True
+    try:
+        valeur_flt = float(valeur_str)
+    except ValueError:
+        print("ERREUR : La valeure a convertire doit etre un nombre")
+        print("Utilisez les points et non les virgules pour les décimales")
+        print("")
+        return convert(unit1, unit2, facteur)
+
     valeur_convertie = round(valeur_flt * facteur, 2)
     print(f"Resultat de la conversion : {valeur_flt} {unit1} = {valeur_convertie} {unit2}")
+    return False
 
 
-print("convertisseur d'unités")
-print("1 - Pouces vers Cm")
-print("2 - Cm vers Pouces")
-print("")
-
-choix = 0
-while choix == 0:
+while True:
+    print("convertisseur d'unités")
+    print("1 - Pouces vers Cm")
+    print("2 - Cm vers Pouces")
+    print("")
     choix = input("Choisissez 1 ou 2 ")
+    if choix == "1" or choix == "2":
+        break
+    print("ERREUR : vous devez choisir entre 1 et 2 ")
+    print("")
+
+while True:
     if choix == "1":
-        convert("Pouces", "Cm", 2.54)
+        if convert("Pouces", "Cm", 2.54):
+            break
     if choix == "2":
-        convert("Cm", "Pouces", 0.394)
-    else:
-        print("Vous devez choisir entre 1 et 2")
-        choix = 0
-        print("")
+        if convert("Cm", "Pouces", 0.394):
+            break
