@@ -13,11 +13,11 @@ while True:
 
 duree = 0
 if choix == "1":
-    duree = 90
+    duree = 3 * 60
 if choix == "2":
-    duree = 120
+    duree = 6 * 60
 if choix == "3":
-    duree = 150
+    duree = 9 * 60
 
 while True:
     for i in range(10):
