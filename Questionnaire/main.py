@@ -1,4 +1,17 @@
 # Questionnaire
+
+def demander_reponse_numerique_utilisateur(min, max):
+    reponse_str = input(f"Votre réponse(entre {min} et {max}): ")
+    try:
+        reponse_int = int(reponse_str)
+        if min <= reponse_int <= max:
+            return reponse_int
+        print("ERREUR: Vous devez entrez un nombre entre", min, "et", max)
+    except:
+        print("ERREUR: Vous devez rentrer uniquement des chiffres")
+    return demander_reponse_numerique_utilisateur(min, max)
+
+
 def poser_question(question):
     choix = question[1]
     bonne_reponse = question[2]
@@ -7,13 +20,12 @@ def poser_question(question):
     print("Question: ")
     print(" ", question[0])
     for i in range(len(choix)):
-        print("   ", i+1, "-", choix[i])
+        print("   ", i + 1, "-", choix[i])
 
     print()
-    reponse_str = input(f"Votre réponse(entre 1 et {str(len(choix))}): ")
-    reponse_int = int(reponse_str)
+    reponse_int = demander_reponse_numerique_utilisateur(1, len(choix))
 
-    if choix[reponse_int-1].lower() == bonne_reponse.lower():
+    if choix[reponse_int - 1].lower() == bonne_reponse.lower():
         print("Bonne réponse")
         score += 1
     else:
