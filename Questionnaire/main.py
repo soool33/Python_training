@@ -36,11 +36,19 @@ def poser_question(question):
 
 score = 0
 
-question1 = ("Quelle est la capitale de la france ?", ("Marseille", "Nice", "Paris", "Bordeaux", "Lille"), "Paris")
-question2 = ("Quelle est la capitale de l'italie ?", ("Florence", "Rome", "Milan", "Venice"), "Rome")
 
-poser_question(question1)
-poser_question(question2)
+def lancer_questionnaire(questionnaire):
+    for question in questionnaire:
+        poser_question(question)
+
+
+questionnaire_capitale = (
+    ("Quelle est la capitale de la france ?", ("Marseille", "Nice", "Paris", "Bordeaux", "Lille"), "Paris"),
+    ("Quelle est la capitale de l'italie ?", ("Florence", "Rome", "Milan", "Venice"), "Rome"),
+    ("Quelle est la capitale de la Belgique ?", ("Anvers", "Bruges", "Bruxelles", "Liege"), "Bruxelles")
+)
+
+lancer_questionnaire(questionnaire_capitale)
 
 print("Score final: ", score)
 
