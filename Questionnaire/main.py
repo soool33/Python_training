@@ -6,7 +6,7 @@ def demander_reponse_numerique_utilisateur(min, max):
         reponse_int = int(reponse_str)
         if min <= reponse_int <= max:
             return reponse_int
-        print("ERREUR: Vous devez entrez un nombre entre", min, "et", max)
+        print("ERREUR: Vous devez entrez un nombre entre ", min, "et", max)
     except:
         print("ERREUR: Vous devez rentrer uniquement des chiffres")
     return demander_reponse_numerique_utilisateur(min, max)
@@ -39,7 +39,7 @@ score = 0
 
 def lancer_questionnaire(questionnaire):
     for question in questionnaire:
-        poser_question(question) 
+        poser_question(question)
 
 
 questionnaire_capitale = (
