@@ -39,7 +39,7 @@ score = 0
 
 def lancer_questionnaire(questionnaire):
     for question in questionnaire:
-        poser_question(question)
+        poser_question(question) 
 
 
 questionnaire_capitale = (
