@@ -34,7 +34,7 @@ def poser_question(question):
     print()
 
 
-score = 0
+score = 0 
 
 
 def lancer_questionnaire(questionnaire):
