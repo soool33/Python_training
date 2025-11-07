@@ -34,7 +34,7 @@ def poser_question(question):
     print()
 
 
-score = 0 
+score = 0
 
 
 def lancer_questionnaire(questionnaire):
@@ -82,4 +82,4 @@ print("Score final: ", score)
 #
 # print("La distance minimale est: ", distance_min)
 # print("index de la distance minimale: ", index_min)
-# print("Le chauffeur le plus proche ets:", nom_chauffeur[index_min])
+# print("Le chauffeur le plus proche ets:", nom_chauffeur[index_min]) 
