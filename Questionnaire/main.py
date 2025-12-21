@@ -50,7 +50,7 @@ questionnaire_capitale = (
 
 lancer_questionnaire(questionnaire_capitale)
 
-print("Score final: ", score)
+print("Score final: ", score) 
 
 # Exercice distance chauffeur ------------------------------------
 
@@ -82,4 +82,4 @@ print("Score final: ", score)
 #
 # print("La distance minimale est: ", distance_min)
 # print("index de la distance minimale: ", index_min)
-# print("Le chauffeur le plus proche ets:", nom_chauffeur[index_min]) 
+# print("Le chauffeur le plus proche ets:", nom_chauffeur[index_min])
